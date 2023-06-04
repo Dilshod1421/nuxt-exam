@@ -8,20 +8,24 @@ export const profile = [
         id: 1,
         icon: profil,
         title: 'Profile',
+        path: '/profile',
     },
     {
         id: 2,
         icon: messages,
         title: 'Messages',
+        path: '/messages',
     },
     {
         id: 1,
         icon: orders,
         title: 'Orders',
+        path: '/orders',
     },
     {
         id: 1,
         icon: mycart,
         title: 'My cart',
+        path: '/mycart',
     }
 ]

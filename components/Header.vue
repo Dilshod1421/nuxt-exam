@@ -15,8 +15,10 @@
             </form>
             <ul class="h-[41px] w-[20%] flex justify-between items-center">
                 <li v-for="el in profile" :key="el.id">
-                    <img :src="el.icon" alt="">
-                    <h1>{{ el.title }}</h1>
+                    <nuxt-link class="link" :to="el.path">
+                        <img :src="el.icon" alt="">
+                        <h1>{{ el.title }}</h1>
+                    </nuxt-link>
                 </li>
             </ul>
         </nav>
@@ -30,7 +32,7 @@ import { profile } from '~/constants/profile';
 </script>
 
 <style lang="scss" scoped>
-li {
+.link {
     height: 100%;
     display: flex;
     flex-direction: column;
