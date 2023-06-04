@@ -2,9 +2,10 @@
     <div class="pt-20">
         <Navbar />
         <div class="container mx-auto mt-6 px-32 flex flex-col gap-8">
-            <section class="flex justify-between items-center p-3 w-full bg-[#FFFFFF] rounded-lg">
+            <section class="categories flex justify-between items-center p-3 w-full bg-[#FFFFFF] rounded-lg">
                 <ul class="w-[21%]">
-                    <li v-for="el in category" :key="el.id" class="rounded-lg p-2 hover:bg-[#E5F1FF] hover:cursor-pointer">
+                    <li v-for="el in categories" :key="el.id"
+                        class="rounded-lg p-2 hover:bg-[#E5F1FF] hover:cursor-pointer">
                         <nuxt-link class="item text-[#505050]" :to="el.path">{{ el.name }}</nuxt-link>
                     </li>
                 </ul>
@@ -47,7 +48,7 @@
                 </div>
             </section>
 
-            <section class="bg-white w-full h-[240px] rounded-lg flex items-center border">
+            <section class="deals-and-offers bg-white w-full h-[240px] rounded-lg flex items-center border">
                 <div class="p-5 h-full w-[25%] border-r">
                     <h1 class="text-xl font-semibold">Deals and offers</h1>
                     <h2 class="text-[rgb(139,150,165)] ">Hygiene equipments</h2>
@@ -70,10 +71,10 @@
                         </div>
                     </div>
                 </div>
-                <Card1 v-for="el in techs" :key="el" :item="el" />
+                <DealsAndOffersCard v-for="el in tech" :key="el" :item="el" />
             </section>
 
-            <section class="bg-white w-full rounded-lg flex items-center h-[260px] border">
+            <section class="home-and-outdoor bg-white w-full rounded-lg flex items-center h-[260px] border">
                 <div class="h-full w-[25%]">
                     <div class="absolute pt-5 pl-5">
                         <h1 class="text-xl font-semibold w-[55%] text-justify pb-5">Home and outdoor</h1>
@@ -82,11 +83,11 @@
                     <img class="rounded-l-lg w-full h-[260px]" src="../assets/images/home-outdoor.png" alt="">
                 </div>
                 <div class="w-[75%] flex flex-wrap">
-                    <Card2 v-for="(el, i) in 8" :key="i" />
+                    <HomeAndOutdoorCard v-for="(el, i) in 8" :key="i" />
                 </div>
             </section>
 
-            <section class="bg-white w-full rounded-lg flex items-center h-[260px] border">
+            <section class="gadgets bg-white w-full rounded-lg flex items-center h-[260px] border">
                 <div class="h-full w-[25%]">
                     <div class="absolute pt-5 pl-5">
                         <h1 class="text-xl font-semibold w-[45%] text-justify pb-5">Consumer electronics and gadgets</h1>
@@ -95,7 +96,7 @@
                     <img class="rounded-l-lg w-full h-[260px]" src="../assets/images/consumer.png" alt="">
                 </div>
                 <div class="w-[75%] flex flex-wrap">
-                    <Card2 v-for="(el, i) in 8" :key="i" />
+                    <HomeAndOutdoorCard v-for="(el, i) in 8" :key="i" />
                 </div>
             </section>
 
@@ -123,24 +124,24 @@
                 </form>
             </section>
 
-            <section class="w-full">
+            <section class="recommended-items w-full">
                 <h1 class="text-2xl font-semibold">Recommended items</h1>
                 <div class="w-full items-center justify-between flex flex-wrap">
-                    <Card3 v-for="(el, i) in 10" :key="i" />
+                    <RecommendedItemsCard v-for="(el, i) in 10" :key="i" />
                 </div>
             </section>
 
-            <section class="w-full">
+            <section class="extra-services w-full">
                 <h1 class="text-2xl font-semibold pb-5">Our extra services</h1>
                 <div class="flex w-full items-center justify-between">
-                    <Card4 v-for="(el, i) in extra_services" :key="i" :ex="el" />
+                    <ExtraServicesCard v-for="(el, i) in extra_services" :key="i" :ex="el" />
                 </div>
             </section>
 
-            <section class="w-full pb-7">
+            <section class="regions w-full pb-7">
                 <h1 class="text-2xl font-semibold pb-5">Suppliers by region</h1>
                 <div class="flex flex-wrap w-full items-center">
-                    <Card5 v-for="(el, i) in countries" :key="i" :co="el" />
+                    <RegionCard v-for="(el, i) in countries" :key="i" :co="el" />
                 </div>
             </section>
         </div>
@@ -149,11 +150,6 @@
 </template>
 
 <script setup>
-const { useCategories } = useDatas();
-const category = useCategories();
-import { techs } from '~/constants/tech';
-import { extra_services } from '~/constants/extra-services';
-import { countries } from '~/constants/countries';
 </script>
 
 <style lang="scss" scoped>

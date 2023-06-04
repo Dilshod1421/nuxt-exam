@@ -1,19 +1,19 @@
 <template>
     <div class="pt-20">
         <Navbar />
-        <MobileCategory />
+        <MobileFilterPath />
         <div class="container mx-auto px-32 flex gap-5">
-            <Sidebar class="overflow-y-auto max-h-[71vh]" />
+            <MobileSidebar class="overflow-y-auto max-h-[71vh]" />
             <div class="w-[80%] flex flex-col gap-5 overflow-y-auto max-h-[71vh] pb-52">
                 <MobileFilter class="flex" />
                 <div class="flex flex-wrap w-full gap-2">
                     <div v-for="el in 6" :key="el">
-                        <FilterBtn />
+                        <MobileFilterBtn />
                     </div>
                     <button class="text-[#0D6EFD] border-none hover:text-[#366bba]">Clear all filter</button>
                 </div>
                 <div class="w-full flex flex-wrap justify-between">
-                    <Card6 v-for="el in 9" :key="el" />
+                    <MobileCard v-for="el in 9" :key="el" />
                 </div>
                 <div>
                     <div class="pages flex items-center justify-center border border-[#DEE2E7] rounded-md float-right">

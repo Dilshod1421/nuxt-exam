@@ -83,9 +83,6 @@
 </template>
 
 <script setup>
-import { mobiles } from '~/constants/mobiles';
-import { brands } from '~/constants/brands';
-import { features } from '~/constants/features';
 const hall_of_mobiles = mobiles.slice(mobiles.length / 2, mobiles.length);
 const hall_of_brands = brands.slice(brands.length / 2, brands.length);
 const hall_of_features = features.slice(features.length / 2, features.length);

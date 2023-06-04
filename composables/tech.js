@@ -3,7 +3,7 @@ import laptop from '~/assets/images/laptop.png'
 import camera from '~/assets/images/camera.png'
 import naushnik from '~/assets/images/naushnik.png'
 import mobile from '~/assets/images/mobile.png'
-export const techs = [
+export const tech = [
     {
         id: 1,
         img: watch,
