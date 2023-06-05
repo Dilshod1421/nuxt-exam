@@ -48,6 +48,9 @@
 </template>
 
 <script setup>
+definePageMeta({
+    layout: 'mycart'
+})
 </script>
 
 <style lang="scss" scoped></style>
